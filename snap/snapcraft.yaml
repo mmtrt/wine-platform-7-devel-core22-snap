@@ -31,7 +31,7 @@ parts:
       WINE_VER="$(wget -qO- https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/main/binary-amd64/ | grep wine-devel | sed 's|_| |g;s|~| |g' | awk '{print $5}' | tail -n1)"
 
       # set snap version
-      craftctl set-version "$WINE_VER"
+      craftctl set version="$WINE_VER"
 
       # wget and dpkg extract the wine debs
       ## supporting binaries which are arch-specific but the same filenames in both architectures so we only install the native architecture
